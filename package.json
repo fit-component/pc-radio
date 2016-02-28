@@ -16,6 +16,6 @@
     "fit-style": "^1.1.48",
     "react": "^0.14.7",
     "classnames": "^2.2.1",
-    "lodash": "^3.10.1"
+    "fit-button": "^1.2.72"
   }
 }
