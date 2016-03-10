@@ -28,31 +28,33 @@ export default class Radio extends React.Component {
     }
 
     render() {
-        let classname = classNames({
+        const {className, size, disabled, label, children, labelWidth, ...others} = this.props
+        const classes = classNames({
             '_namespace': true,
             'i-checks': true,
-            'i-checks-lg': this.props.size === 'large',
-            'i-checks-sm': this.props.size === 'small',
-            'disabled': this.props.disabled
+            'i-checks-lg': size === 'large',
+            'i-checks-sm': size === 'small',
+            'disabled': disabled,
+            'form-container': !_.isEmpty(label),
+            [className]: className
         })
 
         let childs = (
-            <label style={this.props.style}
-                   className={classname}>
+            <label {...others} className={classes}>
                 <input type="radio"
-                       disabled={this.props.disabled}
+                       disabled={disabled}
                        checked={this.state.checked}
                        onChange={this.handleChange.bind(this)}/>
                 <i></i>
-                <span>{this.props.children}</span>
+                <span>{children}</span>
             </label>
         )
 
-        if (!_.isEmpty(this.props.label)) {
+        if (!_.isEmpty(label)) {
             childs = (
-                <div className="form-container">
-                    <label style={{width:this.props.labelWidth||null}}
-                           className="form-control-label">{this.props.label}</label>
+                <div {...others} className={classes}>
+                    <label style={{width:labelWidth||null}}
+                           className="form-control-label">{label}</label>
                     {childs}
                 </div>
             )
