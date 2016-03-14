@@ -1,6 +1,6 @@
 {
   "name": "fit-radio",
-  "version": "1.1.77",
+  "version": "1.1.78",
   "description": "单选框",
   "main": "lib/index.js",
   "scripts": {
