@@ -28,7 +28,7 @@ export default class Radio extends React.Component {
     }
 
     render() {
-        const {className, size, disabled, label, children, labelWidth, ...others} = this.props
+        const {className, size, disabled, label, children, labelWidth, onChange, ...others} = this.props
         const classes = classNames({
             '_namespace': true,
             'i-checks': true,
