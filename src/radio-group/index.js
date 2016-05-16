@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import { ButtonGroup, Button } from 'fit-button'
+import {ButtonGroup, Button} from 'fit-button'
 import './index.scss'
 import _ from 'lodash'
 
@@ -33,14 +33,13 @@ export default class Group extends React.Component {
     getChildren() {
         let childs = React.Children.map(this.props.children, (child)=> {
             return React.cloneElement(child, {
-                style: this.props.vertical ? {marginTop: 10} : {marginRight: 10},
+                style   : this.props.vertical ? {marginTop: 10} : {marginRight: 10},
                 onChange: this.handleChange.bind(this, child.props.value),
-                checked: this.state.value === child.props.value
+                checked : this.state.value === child.props.value
             })
         })
 
         let layoutClassname = classNames({
-            '_namespace': true,
             'vertical': this.props.vertical
         })
 
@@ -48,8 +47,8 @@ export default class Group extends React.Component {
         case 'button':
             let buttonChilds = React.Children.map(this.props.children, (child)=> {
                 let props = {
-                    onClick: this.handleChange.bind(this, child.props.value, true),
-                    active: this.state.value === child.props.value,
+                    onClick : this.handleChange.bind(this, child.props.value, true),
+                    active  : this.state.value === child.props.value,
                     disabled: child.props.disabled
                 }
                 return (
@@ -75,9 +74,14 @@ export default class Group extends React.Component {
     render() {
         let childs = this.getChildren()
 
+        let classes = classNames({
+            '_namespace'    : true,
+            'form-container': true
+        })
+
         if (!_.isEmpty(this.props.label)) {
             childs = (
-                <div className="form-container">
+                <div className={classes}>
                     <label style={{width:this.props.labelWidth||null}}
                            className="form-control-label">{this.props.label}</label>
                     {childs}
@@ -90,8 +94,8 @@ export default class Group extends React.Component {
 }
 
 Group.defaultProps = {
-    value: null,
-    style: {},
+    value   : null,
+    style   : {},
     vertical: false,
     onChange: ()=> {
     }

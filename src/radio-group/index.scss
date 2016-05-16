@@ -1,6 +1,9 @@
+@import "../../../../../style/reset";
+
 & {
-  display: flex;
-  &.vertical {
-    flex-direction: column;
-  }
+    @include reset;
+    display: flex;
+    &.vertical {
+        flex-direction: column;
+    }
 }
