@@ -29,7 +29,7 @@ export default class Demo extends React.Component {
                 <Radio checked={this.state.checked}
                        disabled={this.state.disabled}
                        style={{marginBottom:10}}>可受外部控制</Radio>
-                <br/>
+                <br/><br/>
                 <Checkbox onChange={this.handleCheck.bind(this)}>选中</Checkbox>
                 <Checkbox style={{marginLeft:10}}
                           onChange={this.handleDisable.bind(this)}>禁用</Checkbox>
