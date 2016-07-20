@@ -6,8 +6,19 @@ import _ from 'lodash'
 export default class Radio extends React.Component {
     constructor(props) {
         super(props)
+
+        let checked
+
+        if (this.props.defaultChecked !== undefined) {
+            checked = this.props.defaultChecked
+        }
+
+        if (this.props.checked !== undefined) {
+            checked = this.props.checked
+        }
+
         this.state = {
-            checked: this.props.defaultChecked || this.props.checked
+            checked
         }
     }
 
@@ -30,13 +41,13 @@ export default class Radio extends React.Component {
     render() {
         const {className, size, disabled, label, children, labelWidth, onChange, ...others} = this.props
         const classes = classNames({
-            '_namespace': true,
-            'i-checks': true,
-            'i-checks-lg': size === 'large',
-            'i-checks-sm': size === 'small',
-            'disabled': disabled,
+            '_namespace'    : true,
+            'i-checks'      : true,
+            'i-checks-lg'   : size === 'large',
+            'i-checks-sm'   : size === 'small',
+            'disabled'      : disabled,
             'form-container': !_.isEmpty(label),
-            [className]: className
+            [className]     : className
         })
 
         let childs = (
@@ -65,8 +76,9 @@ export default class Radio extends React.Component {
 }
 
 Radio.defaultProps = {
-    style: {},
-    disabled: false,
-    onChange: ()=> {
-    }
+    style         : {},
+    disabled      : false,
+    onChange      : ()=> {
+    },
+    defaultChecked: false
 }
