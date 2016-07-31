@@ -1,7 +1,7 @@
-import React from 'react'
-import Radio from 'fit-radio'
+import * as React from 'react'
+import Radio from '../../src'
 
-export default class Demo extends React.Component {
+export default class Demo extends React.Component<any, any> {
     render() {
         return (
             <div>
