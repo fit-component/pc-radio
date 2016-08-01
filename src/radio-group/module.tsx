@@ -22,7 +22,7 @@ export interface PropsDefine {
     /**
      * 类型
      */
-    type?: string
+        type?: string
     /**
      * 文字提示
      */
@@ -49,11 +49,9 @@ export const defaultProps: PropsDefine = {
 
 export interface StateDefine {
     /**
-         * 值
-         */
+     * 值
+     */
     value?: any
 }
 
-export const defaultState: StateDefine = {
-
-}
+export const defaultState: StateDefine = {}
