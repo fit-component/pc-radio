@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Radio from '../../src'
-import Checkbox from 'fit-checkbox'
+import Checkbox from '../../../checkbox/src'
 
 export default class Demo extends React.Component<any, any> {
     constructor(props: any) {
