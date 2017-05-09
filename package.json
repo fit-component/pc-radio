@@ -1,6 +1,6 @@
 {
   "name": "fit-radio",
-  "version": "3.1.77",
+  "version": "3.1.78",
   "description": "单选框",
   "main": "lib/index.js",
   "scripts": {
@@ -16,8 +16,8 @@
     "react": "^0.14.0 || ^15.0.0",
     "classnames": "2.2.3",
     "lodash": "3.10.1",
-    "fit-transmit-transparently": "^3.1.65",
-    "fit-button": "^3.1.63"
+    "fit-transmit-transparently": "^3.1.66",
+    "fit-button": "^3.1.64"
   },
   "typings": "lib/index.d.ts"
 }
